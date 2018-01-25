@@ -1,0 +1,36 @@
+{
+  "name": "standardlibrary/standardlibrary",
+  "description": "[READ ONLY] Documentation for the Standard Library components",
+  "type": "library",
+  "keywords": ["standardlibrary", "docs", "documentation"],
+  "homepage": "https://github.com/standardlibrary",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Simon Deeley",
+      "email": "simondeeley@users.noreply.github.com",
+      "homepage": "https://github.com/simondeeley",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/standardlibrary/standardlibrary/issues",
+    "source": "https://github.com/standardlibrary/standardlibrary",
+    "docs": "https://github.com/standardlibrary/standardlibrary/blob/master/README.md"
+  },
+  "require": {
+    "php": "~7.1",
+    "standardlibrary/type": "~1.0",
+    "standardlibrary/casts-to-string": "~1.0",
+    "standardlibrary/enum": "dev-master",
+    "standardlibrary/collection": "dev-master",
+    "standardlibrary/cache": "dev-master"
+
+},
+  "minimum-stability": "dev",
+   "extra": {
+       "branch-alias": {
+           "dev-master": "1.0-dev"
+       }
+   }
+}

@@ -1,0 +1,333 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "559007ee27505d3d6a8e1af4409a65fc",
+    "packages": [
+        {
+            "name": "psr/cache",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "78c5a01ddbf11cf731f1338a4f5aba23b14d5b47"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/78c5a01ddbf11cf731f1338a4f5aba23b14d5b47",
+                "reference": "78c5a01ddbf11cf731f1338a4f5aba23b14d5b47",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "time": "2016-10-13 14:48:10"
+        },
+        {
+            "name": "standardlibrary/cache",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/standardlibrary/cache.git",
+                "reference": "6409ad2959db2360c9728764cc15c1a90bf3e12c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/standardlibrary/cache/zipball/6409ad2959db2360c9728764cc15c1a90bf3e12c",
+                "reference": "6409ad2959db2360c9728764cc15c1a90bf3e12c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.1",
+                "psr/cache": "~1.0",
+                "standardlibrary/type": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StandardLibrary\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Deeley",
+                    "email": "simondeeley@users.noreply.github.com",
+                    "homepage": "https://github.com/simondeeley",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Universal caching library",
+            "homepage": "https://github.com/standardlibrary",
+            "keywords": [
+                "cache",
+                "library",
+                "optimization",
+                "php"
+            ],
+            "time": "2018-01-09 10:49:13"
+        },
+        {
+            "name": "standardlibrary/casts-to-string",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/standardlibrary/casts-to-string.git",
+                "reference": "21a67d21ceb49778e0702dd204b6814048112cde"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/standardlibrary/casts-to-string/zipball/21a67d21ceb49778e0702dd204b6814048112cde",
+                "reference": "21a67d21ceb49778e0702dd204b6814048112cde",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.1"
+            },
+            "replace": {
+                "simondeeley/cast-to-string": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StandardLibrary\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Deeley",
+                    "email": "simondeeley@users.noreply.github.com",
+                    "homepage": "https://github.com/simondeeley",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Reuseable interface for describing PHP objects that can be cast to a string",
+            "homepage": "https://github.com/standardlibrary",
+            "keywords": [
+                "casts",
+                "php",
+                "string"
+            ],
+            "time": "2017-12-11 15:43:07"
+        },
+        {
+            "name": "standardlibrary/collection",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/standardlibrary/collection.git",
+                "reference": "cbe284e77ed6816dccacc857c65bd3f956f59230"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/standardlibrary/collection/zipball/cbe284e77ed6816dccacc857c65bd3f956f59230",
+                "reference": "cbe284e77ed6816dccacc857c65bd3f956f59230",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.1",
+                "standardlibrary/type": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StandardLibrary\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Deeley",
+                    "email": "simondeeley@users.noreply.github.com",
+                    "homepage": "https://github.com/simondeeley",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Reusable array-type wrapper for PHP objects",
+            "homepage": "https://github.com/standardlibrary",
+            "keywords": [
+                "array",
+                "building-block",
+                "collection",
+                "immutable",
+                "php"
+            ],
+            "time": "2018-01-19 15:41:07"
+        },
+        {
+            "name": "standardlibrary/enum",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/standardlibrary/enum.git",
+                "reference": "ac46886653a884976e1019570b62bd325601b8ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/standardlibrary/enum/zipball/ac46886653a884976e1019570b62bd325601b8ba",
+                "reference": "ac46886653a884976e1019570b62bd325601b8ba",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.1",
+                "standardlibrary/casts-to-string": "dev-master",
+                "standardlibrary/type": "dev-master"
+            },
+            "replace": {
+                "simondeeley/enum": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StandardLibrary\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Deeley",
+                    "email": "simondeeley@users.noreply.github.com",
+                    "homepage": "https://github.com/simondeeley",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Reuseable interface for describing PHP objects that can be cast to a string",
+            "homepage": "https://github.com/standardlibrary",
+            "keywords": [
+                "enum",
+                "immutable",
+                "library",
+                "php"
+            ],
+            "time": "2017-12-28 16:21:19"
+        },
+        {
+            "name": "standardlibrary/type",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/standardlibrary/type.git",
+                "reference": "aca33782849536d6161bf005896fbeb835b2a74d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/standardlibrary/type/zipball/aca33782849536d6161bf005896fbeb835b2a74d",
+                "reference": "aca33782849536d6161bf005896fbeb835b2a74d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.1"
+            },
+            "replace": {
+                "simondeeley/type": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StandardLibrary\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Deeley",
+                    "email": "simondeeley@users.noreply.github.com",
+                    "homepage": "https://github.com/simondeeley",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Building block base classes for PHP objects",
+            "homepage": "https://github.com/standardlibrary",
+            "keywords": [
+                "building-block",
+                "immutable",
+                "php"
+            ],
+            "time": "2017-12-11 14:45:53"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "standardlibrary/enum": 20,
+        "standardlibrary/collection": 20,
+        "standardlibrary/cache": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "~7.1"
+    },
+    "platform-dev": []
+}
