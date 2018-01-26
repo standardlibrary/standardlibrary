@@ -223,7 +223,8 @@ $(function() {
 {% endmacro %}
 
 {% macro element(tree, opened, depth) %}
-    {% from _self import element, add_class_methods_index, class %}
+    {% from _self import element %}
+    {% from 'class.twig' class %}
 
     <ul>
         {%- for element in tree -%}
@@ -241,7 +242,13 @@ $(function() {
                     <div style="padding-left:{{ 8 + (depth * 18) }}px" class="hd leaf">
                         <a href="{{ class_path(element[1]) }}">{{ element[0] }}</a>
                         <ul>
-                            {{ add_class_methods_index(class) -}}
+                        {% if class %}
+                            {% set from_name = class.name|replace({'\\': '\\\\'}) %}
+                            {% set from_link = class_path(class) %}
+                            {% for meth in class.methods %}
+                                {"type": "Method", "fromName": "{{ from_name|raw }}", "fromLink": "{{ from_link|raw }}", "link": "{{ method_path(meth) }}", "name": "{{ meth|replace({'\\': '\\\\'})|raw }}", "doc": "{{ meth.shortdesc|desc(class)|json_encode }}"},
+                            {% endfor %}
+                        {% endif %}
                         </ul>
                     </div>
                 </li>
