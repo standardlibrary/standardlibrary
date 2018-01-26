@@ -242,7 +242,8 @@ $(function() {
                     <div style="padding-left:{{ 8 + (depth * 18) }}px" class="hd leaf">
                         <a href="{{ class_path(element[1]) }}">{{ element[0] }}</a>
                         <ul>
-                        {% if classes.[element[0]].methods %}
+                        {% set class = attribute(classes,  element[0]) %}
+                        {% if classes.class.methods %}
                             {% set from_name = element[0]|replace({'\\': '\\\\'}) %}
                             {% set from_link = class_path(element[1]) %}
                             {% for meth in class.methods %}
