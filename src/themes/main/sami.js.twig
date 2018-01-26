@@ -224,7 +224,7 @@ $(function() {
 
 {% macro element(tree, opened, depth) %}
     {% from _self import element %}
-    {% from global import classes %}
+    {% from _global import classes %}
 
     <ul>
         {%- for element in tree -%}
