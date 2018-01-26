@@ -223,7 +223,7 @@ $(function() {
 {% endmacro %}
 
 {% macro element(tree, opened, depth) %}
-    {% from _self import element, classes %}
+    {% from _self import element, project %}
 
     <ul>
         {%- for element in tree -%}
@@ -241,10 +241,10 @@ $(function() {
                     <div style="padding-left:{{ 8 + (depth * 18) }}px" class="hd leaf">
                         <a href="{{ class_path(element[1]) }}">{{ element[0] }}</a>
                         <ul>
-                        {% set class = attribute(classes,  element[0]) %}
-                        {% if classes.class.methods %}
+                        {% set class = attribute(project.classes, element[0]) %}
+                        {% if project.classes.class.methods %}
                             {% set from_name = element[0]|replace({'\\': '\\\\'}) %}
-                            {% set from_link = class_path(element[1]) %}
+                            {% set from_link = class_path(class) %}
                             {% for meth in class.methods %}
                                 {"type": "Method", "fromName": "{{ from_name|raw }}", "fromLink": "{{ from_link|raw }}", "link": "{{ method_path(meth) }}", "name": "{{ meth|replace({'\\': '\\\\'})|raw }}", "doc": "{{ meth.shortdesc|desc(class)|json_encode }}"},
                             {% endfor %}
