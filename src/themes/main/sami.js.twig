@@ -223,7 +223,7 @@ $(function() {
 {% endmacro %}
 
 {% macro element(tree, opened, depth) %}
-    {% from _self import element, project %}
+    {% from _self import element %}
 
     <ul>
         {%- for element in tree -%}
@@ -241,8 +241,8 @@ $(function() {
                     <div style="padding-left:{{ 8 + (depth * 18) }}px" class="hd leaf">
                         <a href="{{ class_path(element[1]) }}">{{ element[0] }}</a>
                         <ul>
-                        {% set class = attribute(project.index.classes, element[0]) %}
-                        {% if index.classes.class.methods %}
+                        {% set class = attribute(classes, element[0]) %}
+                        {% if classes.class.methods %}
                             {% set from_name = element[0]|replace({'\\': '\\\\'}) %}
                             {% set from_link = class_path(class) %}
                             {% for meth in class.methods %}
