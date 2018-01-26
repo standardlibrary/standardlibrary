@@ -243,8 +243,8 @@ $(function() {
                         <a href="{{ class_path(element[1]) }}">{{ element[0] }}</a>
                         <ul>
                         {% if classes.[element[2]].methods %}
-                            {% set from_name = class.name|replace({'\\': '\\\\'}) %}
-                            {% set from_link = class_path(class) %}
+                            {% set from_name = element[2]|replace({'\\': '\\\\'}) %}
+                            {% set from_link = class_path(element[2]) %}
                             {% for meth in class.methods %}
                                 {"type": "Method", "fromName": "{{ from_name|raw }}", "fromLink": "{{ from_link|raw }}", "link": "{{ method_path(meth) }}", "name": "{{ meth|replace({'\\': '\\\\'})|raw }}", "doc": "{{ meth.shortdesc|desc(class)|json_encode }}"},
                             {% endfor %}
