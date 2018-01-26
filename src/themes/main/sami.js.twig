@@ -224,7 +224,7 @@ $(function() {
 
 {% macro element(tree, opened, depth) %}
     {% from _self import element %}
-    {% from 'class.twig' class %}
+    {% from 'class.twig' import class %}
 
     <ul>
         {%- for element in tree -%}
