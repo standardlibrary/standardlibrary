@@ -223,7 +223,7 @@ $(function() {
 {% endmacro %}
 
 {% macro element(tree, opened, depth) %}
-    {% from _self import element, project %}
+    {% from _self import element, index %}
 
     <ul>
         {%- for element in tree -%}
@@ -242,7 +242,7 @@ $(function() {
                         <a href="{{ class_path(element[1]) }}">{{ element[0] }}</a>
                         <ul>
                         {% set class = attribute(project.classes, element[0]) %}
-                        {% if project.classes.class.methods %}
+                        {% if index.classes.class.methods %}
                             {% set from_name = element[0]|replace({'\\': '\\\\'}) %}
                             {% set from_link = class_path(class) %}
                             {% for meth in class.methods %}
