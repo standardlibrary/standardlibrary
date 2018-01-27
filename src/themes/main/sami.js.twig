@@ -6,7 +6,7 @@ window.projectVersion = '{{ project.version }}';
 
     var bhIndex = null;
     var rootPath = '';
-    var treeHtml = '{{ element(tree, project.config('default_opened_level'), 0, classes)|replace({"'": "\\'", "\n": ''})|raw }}';
+    var treeHtml = '{{ element(tree, project.config('default_opened_level'), 1, classes)|replace({"'": "\\'", "\n": ''})|raw }}';
 
     var searchTypeClasses = {
         'Namespace': 'label-default',
@@ -226,10 +226,23 @@ $(function() {
     {% from _self import element, add_class_methods_index %}
 
     <ul>
-        {% for class in classes -%}
-            <li>{% if class.isTrait %}"Trait"{% else %}"Class"{% endif %}, {% if class.namespace %}"fromName": "{{ class.namespace|replace({'\\': '\\\\'})|raw }}", "fromLink": "{{ namespace_path(class.namespace) }}",{% endif %} "link": "{{ class_path(class) }}", "name": "{{ class.name|replace({'\\': '\\\\'})|raw }}", "doc": "{{ class.shortdesc|desc(class)|json_encode }}"},
-            </li>
-            {{ add_class_methods_index(class) }}
-        {% endfor %}
+        {%- for element in tree -%}
+            {% if element[2] %}
+                <li data-name="namespace:{{ element[1]|replace({'\\': '_'})|raw }}" {% if depth < opened %}class="opened"{% endif %}>
+                    <div style="padding-left:{{ (depth * 18)|raw }}px" class="hd">
+                        <span class="glyphicon glyphicon-play"></span>{% if not project.config('simulate_namespaces') %}<a href="{{ namespace_path(element[1]) }}">{% endif %}{{ element[0]|raw }}{% if not project.config('simulate_namespaces') %}</a>{% endif %}
+                    </div>
+                    <div class="bd">
+                        {{ element(element[2], opened, depth + 1) -}}
+                    </div>
+                </li>
+            {% else %}
+                <li data-name="class:{{ (element[1].name)|replace({'\\': '_'}) }}" {% if depth < opened %}class="opened"{% endif %}>
+                    <div style="padding-left:{{ 8 + (depth * 18) }}px" class="hd leaf">
+                        <a href="{{ class_path(element[1]) }}">{{ element[0] }}</a>
+                    </div>
+                </li>
+            {% endif %}
+        {%- endfor %}
     </ul>
 {% endmacro %}
