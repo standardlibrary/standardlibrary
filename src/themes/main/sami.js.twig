@@ -222,7 +222,7 @@ $(function() {
     {% endif %}
 {% endmacro %}
 
-{% macro element(tree, opened, depth) %}
+{% macro element(tree, opened, depth, classes) %}
     {% from _self import element, add_class_methods_index %}
 
     <ul>
