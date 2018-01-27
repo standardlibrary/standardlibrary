@@ -6,7 +6,7 @@ window.projectVersion = '{{ project.version }}';
 
     var bhIndex = null;
     var rootPath = '';
-    var treeHtml = '{{ element(tree, project.config('default_opened_level'), 0)|replace({"'": "\\'", "\n": ''})|raw }}';
+    var treeHtml = '{{ element(tree, project.config('default_opened_level'), 0, classes)|replace({"'": "\\'", "\n": ''})|raw }}';
 
     var searchTypeClasses = {
         'Namespace': 'label-default',
