@@ -20,8 +20,8 @@
   },
   "require": {
     "php": "~7.1",
-    "standardlibrary/type": "~1.0",
-    "standardlibrary/casts-to-string": "~1.0",
+    "standardlibrary/type": "dev-master",
+    "standardlibrary/casts-to-string": "dev-master",
     "standardlibrary/enum": "dev-master",
     "standardlibrary/collection": "dev-master",
     "standardlibrary/cache": "dev-master"
