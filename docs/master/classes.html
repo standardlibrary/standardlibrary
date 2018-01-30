@@ -7,7 +7,6 @@
 
             <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="js/jquery-1.11.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -23,33 +22,21 @@
     <body id="classes" data-name="" data-root-path="">
             <div id="content">
         <div id="left-column">
-                <div id="control-panel">
-                <script>
-            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
-        </script>
-        <form id="search-form" action="search.html" method="GET">
-            <span class="glyphicon glyphicon-search"></span>
-            <input name="search"
-                   class="typeahead form-control"
-                   type="search"
-                   placeholder="Search">
-        </form>
-    </div>
-
+            
                 <div id="api-tree"></div>
 
         </div>
         <div id="right-column">
-                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+                <nav id="site-nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
-            <div class="navbar-header">
+            <div class="navbar-header  navbar-collapse">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Standard Library</a>
+                <a class="navbar-brand" href="index.html"><img class="pull-left" src="img/logo-small.png" alt="Standard Library" />Standard Library</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-elements">
                 <ul class="nav navbar-nav">
@@ -58,7 +45,21 @@
                                         <li><a href="interfaces.html">Interfaces</a></li>
                     <li><a href="traits.html">Traits</a></li>
                     <li><a href="doc-index.html">Index</a></li>
-                    <li><a href="search.html">Search</a></li>
+                    <li class="divider">
+                        <form id="search-form" action="search.html" method="GET" class="navbar-form">
+                            <div class="form-group">
+                                <span class="glyphicon glyphicon-search"></span>
+                                    <input name="search"
+                                           class="typeahead form-control"
+                                           type="search"
+                                           placeholder="Search">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="dropdown divider"><a href="#" class="dropdown-toggle" data-toggle="dropdown">master <b class="caret"></b></a>
+                        <ul class="dropdown-menu"><li><a href="../master/index.html" data-version="master">master</a>
+                                </li>                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

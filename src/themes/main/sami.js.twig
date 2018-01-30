@@ -6,15 +6,15 @@ window.projectVersion = '{{ project.version }}';
 
     var bhIndex = null;
     var rootPath = '';
-    var treeHtml = '{{ element(tree, project.config('default_opened_level'), 1, classes)|replace({"'": "\\'", "\n": ''})|raw }}';
+    var treeHtml = '{{ element(tree[0][2], project.config('default_opened_level'), 0, classes)|replace({"'": "\\'", "\n": ''})|raw }}';
 
     var searchTypeClasses = {
         'Namespace': 'label-default',
-        'Class': 'label-info',
-        'Interface': 'label-primary',
-        'Trait': 'label-success',
-        'Method': 'label-danger',
-        '_': 'label-warning'
+        'Class': 'label-default',
+        'Interface': 'label-default',
+        'Trait': 'label-default',
+        'Method': 'label-default',
+        '_': 'label-default'
     };
 
     var searchIndex = [
@@ -35,11 +35,15 @@ window.projectVersion = '{{ project.version }}';
                 {{ add_class_methods_index(class) }}
             {% endfor %}
 
+            {% for class in classes -%}
+                {"type": {% if class.isTrait %}"Trait"{% else %}"Class"{% endif %}, {% if class.namespace %}"fromName": "{{ class.namespace|replace({'\\': '\\\\'})|raw }}", "fromLink": "{{ namespace_path(class.namespace) }}",{% endif %} "link": "{{ class_path(class) }}", "name": "{{ class.shortdesc|desc(class)|replace({'"': ''})|json_encode }}", "doc": "{{ class.shortdesc|desc(class)|json_encode }}"},
+            {% endfor %}
+
             {# Override this block, search_index_extra, to add custom search entries! #}
             {% block search_index_extra '' %}
         {% endblock %}
         // Fix trailing commas in the index
-        {}
+        {},
     ];
 
     /** Tokenizes strings by namespaces and functions */
@@ -223,24 +227,45 @@ $(function() {
 {% endmacro %}
 
 {% macro element(tree, opened, depth, classes) %}
-    {% from _self import element, add_class_methods_index %}
+    {% from _self import element %}
 
     <ul>
         {%- for element in tree -%}
+
+            {%- set methods = [] -%}
+
+            {%- if not element[2] and classes[element[1].name].methods -%}
+                {%- for method in classes[element[1].name].methods -%}
+                    {%- set methods = methods|merge([[ method, method|split('::')|last ]]) -%}
+                {%- endfor -%}
+            {%- endif -%}
+
             {% if element[2] %}
-                <li data-name="namespace:{{ element[1]|replace({'\\': '_'})|raw }}" {% if depth < opened %}class="opened"{% endif %}>
+                <li id="namespace_{{ element[1]|replace({'\\': '_'})|raw }}"" data-name="namespace:{{ element[1]|replace({'\\': '_'})|raw }}" {% if depth < opened %}class="opened"{% endif %}>
                     <div style="padding-left:{{ (depth * 18)|raw }}px" class="hd">
-                        <span class="glyphicon glyphicon-play"></span>{% if not project.config('simulate_namespaces') %}<a href="{{ namespace_path(element[1]) }}">{% endif %}{{ element[0]|raw }}{% if not project.config('simulate_namespaces') %}</a>{% endif %}
+                        <span class="glyphicon glyphicon-play"></span>{% if not project.config('simulate_namespaces') %}<a href="#namespace_{{ element[1]|replace({'\\': '_'})|raw }}">{% endif %}{{ element[0]|raw }}{% if not project.config('simulate_namespaces') %}</a>{% endif %}
                     </div>
                     <div class="bd">
-                        {{ element(element[2], opened, depth + 1) -}}
+                        {{ element(element[2], opened, depth + 1, classes) -}}
                     </div>
                 </li>
             {% else %}
-                <li data-name="class:{{ (element[1].name)|replace({'\\': '_'}) }}" {% if depth < opened %}class="opened"{% endif %}>
-                    <div style="padding-left:{{ 8 + (depth * 18) }}px" class="hd leaf">
-                        <a href="{{ class_path(element[1]) }}">{{ element[0] }}</a>
+                <li data-name="class:{{ element[1].name|replace({'\\': '_'}) }}" {% if depth < opened %}class="opened"{% endif %}>
+                    <div style="padding-left:{{ 8 + (depth * 18) }}px" class="hd{% if not methods %} leaf{% endif %}">
+                        {% if methods %}<span class="glyphicon glyphicon-play"></span>{% endif %}<a href="{{ class_path(element[1]) }}">{{ element[0] }}</a>
                     </div>
+                    {% if methods %}
+                    <div class="bd">
+                        <ul>
+                        {% for method in methods %}
+                            <li data-name="method:{{ method[1] }}" {% if depth < opened %}class="opened"{% endif %}>
+                                <div style="padding-left:{{ 8 + ((depth+1) * 18) }}px" class="hd leaf">
+                                    <a href="{{ class_path(element[1]) }}#method_{{ method[1] }}">{{ method[1] }}</a>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
                 </li>
             {% endif %}
         {%- endfor %}

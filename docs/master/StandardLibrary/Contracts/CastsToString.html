@@ -7,7 +7,6 @@
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="../../css/main.css">
         <link rel="stylesheet" type="text/css" href="../../css/style.css">
         <script src="../../js/jquery-1.11.1.min.js"></script>
         <script src="../../js/bootstrap.min.js"></script>
@@ -23,33 +22,21 @@
     <body id="class" data-name="class:StandardLibrary_Contracts_CastsToString" data-root-path="../../">
             <div id="content">
         <div id="left-column">
-                <div id="control-panel">
-                <script>
-            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
-        </script>
-        <form id="search-form" action="../../search.html" method="GET">
-            <span class="glyphicon glyphicon-search"></span>
-            <input name="search"
-                   class="typeahead form-control"
-                   type="search"
-                   placeholder="Search">
-        </form>
-    </div>
-
+            
                 <div id="api-tree"></div>
 
         </div>
         <div id="right-column">
-                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+                <nav id="site-nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
-            <div class="navbar-header">
+            <div class="navbar-header  navbar-collapse">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../../index.html">Standard Library</a>
+                <a class="navbar-brand" href="../../index.html"><img class="pull-left" src="../../img/logo-small.png" alt="Standard Library" />Standard Library</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-elements">
                 <ul class="nav navbar-nav">
@@ -58,33 +45,39 @@
                                         <li><a href="../../interfaces.html">Interfaces</a></li>
                     <li><a href="../../traits.html">Traits</a></li>
                     <li><a href="../../doc-index.html">Index</a></li>
-                    <li><a href="../../search.html">Search</a></li>
+                    <li class="divider">
+                        <form id="search-form" action="../../search.html" method="GET" class="navbar-form">
+                            <div class="form-group">
+                                <span class="glyphicon glyphicon-search"></span>
+                                    <input name="search"
+                                           class="typeahead form-control"
+                                           type="search"
+                                           placeholder="Search">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="dropdown divider"><a href="#" class="dropdown-toggle" data-toggle="dropdown">master <b class="caret"></b></a>
+                        <ul class="dropdown-menu"><li><a href="../../../master/index.html" data-version="master">master</a>
+                                </li>                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-                        <div class="namespace-breadcrumbs">
-            <ol class="breadcrumb">
-                <li><span class="label label-default">interface</span></li>
-                        <li><a href="../../StandardLibrary.html">StandardLibrary</a></li><li class="backslash">\</li><li><a href="../../StandardLibrary/Contracts.html">Contracts</a></li><li class="backslash">\</li><li>CastsToString</li>
-            </ol>
-        </div>
-                <div id="page-content">
+                        <div id="page-content">
                 
     <div class="page-header">
         <h1>
             CastsToString
                 
         </h1>
-    </div>
-
-    <p>    interface
-    <strong>CastsToString</strong>
+        <p>    interface
+    <code>CastsToString</code>
 </p>
-
-        
+            
     
+    </div>
 
             <div class="description">
             <p>Interface for casting objects to a string</p>            <p>Use this interface to describe that an object can be cast to a string
@@ -92,48 +85,53 @@ literal. The string should be a representation of the object.</p>               
     
     
     
-    
-            <h2>Methods</h2>
+            <h2>Available Methods</h2>
 
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    <a href="#method___toString">__toString</a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___toString">__toString</a>()
-        
                                             <p>Cast to string</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
 
 
-        <h2>Details</h2>
+        <h2>Method Details</h2>
 
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___toString">
-        <div class="location">at         line 33</div>
-        <code>                    string
-    <strong>__toString</strong>()
-        </code>
+        <a href="#method___toString"><span class="glyphicon glyphicon-link"></span></a>
+        <div class="location"><small></small></div>
+        __toString()
     </h3>
     <div class="details">
             
     
-
                     <div class="method-description">
                                     <p>Cast to string</p>                    <p>Should return a string literal which is a representation of the object.
 Throwing an exception from this method is unpredicatable and should be
 avoided.</p>                            </div>
                 <div class="tags">
+
+            <h4>Method Signature</h4>
+            <table class="table table-condensed">
+                <tr>
+                    <td><code>                    string
+    <strong>__toString</strong>()
+        </code></td>
+                </tr>
+            </table>
+
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td>string</td>
+            <td><code>string</code></td>
             <td><ul>
 <li>A string representing or describing the object</li>
 </ul>

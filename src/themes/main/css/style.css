@@ -1,6 +1,484 @@
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Arsenal|Oswald|Overpass+Mono');
 
 html, body {
-	font-family:'Open Sans', Arial, sans-serif;
+    font-size: 15px;
+    padding-top: 15px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    margin-top: 60px
+}
+
+html, body, #content {
+    height: 100%;
+	color: #555;
+	font-family:'Arsenal', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', Arial, sans-serif;
+    color: #222;
+}
+
+a, a:active a:link, a:visited {
+	color: #ff7f82;
+}
+
+a:hover {
+	color: #FF3B3F;
+}
+
+/* Site menu */
+
+#site-nav.navbar-default {
+    margin: 0;
+    border-radius: 0;
+    border: 1px solid #f2f2f2;
+    border-left: none;
+    background-color: white;
+    background-image: none;
+    box-shadow: none;
+}
+
+#site-nav.navbar-default .navbar-brand,
+#site-nav.navbar-default .navbar-nav > li > a {
+    color: #222;
+}
+
+#site-nav.navbar-default .navbar-nav > li > a:hover {
+    text-decoration: underline;
+}
+
+#navbar-elements {
+    float: right;
+}
+
+@media (max-width: 768px) {
+    #navbar-elements {
+        float: none !important;
+    }
+}
+
+/* Namespace breadcrumbs */
+
+.namespace-breadcrumbs .breadcrumb {
+    margin: 0 0 12px;
+    border-radius: 0 0 4px 4px;
+    padding-left: 35px;
+}
+
+.namespace-breadcrumbs .breadcrumb > li + li:before {
+    content: "";
+}
+.namespace-breadcrumbs .breadcrumb > .backslash {
+    color: #A9A9A9;
+}
+
+/* Site columns */
+
+#right-column {
+    margin-left: 20%;
+}
+
+#left-column {
+    width: 20%;
+    position: fixed;
+    height: 100%;
+    border-right: 1px solid #CAEBF2;
+    line-height: 18px;
+    display: flex;
+    flex-flow: column;
+}
+
+@media (max-width: 991px) {
+    #left-column {
+        display: none;
+    }
+    #right-column {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* API Tree */
+
+#api-tree {
+    overflow: auto;
+    height: 100%;
+}
+
+#api-tree ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#api-tree ul li {
+    padding: 0;
+    margin: 0;
+}
+
+/* Prevents the menu from jittering on lad */
+#api-tree .glyphicon-play {
+    width: 26px;
+}
+
+#api-tree ul li .hd {
+    padding: 5px;
+	color: #ff7f82;
+}
+
+#api-tree ul li.opened > .hd span {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+#api-tree .bd {
+    display: none;
+}
+
+#api-tree li.opened > .bd {
+    display: block;
+}
+
+#api-tree li.active > .hd a {
+    color: #FF3B3F;
+    font-weight: bold;
+}
+
+#api-tree div.leaf a {
+    margin-left: 20px;
+}
+
+#api-tree .hd span {
+    padding: 2px 8px;
+    font-size: 10px;
+    line-height: 85%;
+	color: #eee;
+}
+
+/* Control panel, search form, version drop-down */
+
+.navbar-nav > li.divider {
+    border-left: 1px solid #f2f2f2;
+}
+
+#search-form input {
+    width: 100%;
+    padding-left: 28px;
+    border: none;
+    outline: none;
+    -webkit-appearance:none;
+    box-shadow: none;
+}
+
+#search-form span.glyphicon-search {
+    position: absolute;
+    top: 1.3em;
+    font-size: 14px;
+    z-index: 2;
+}
+
+/* Typeahead */
+
+.twitter-typeahead {
+    width: 100%;
+    z-index: 1;
+}
+
+.tt-dropdown-menu {
+    overflow: auto;
+    max-height: 260px;
+    margin-top: 8px;
+    background-color: #fff;
+    border: 1px solid #f2f2f2;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+.tt-dropdown-menu p {
+    margin: 0;
+    padding: 4px;
+}
+
+.tt-suggestion {
+    padding: 3px 20px;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 14px;
+}
+
+.tt-suggestion:last-child {
+    border-bottom: none;
+}
+
+.tt-cursor {
+    background-color: #CAEBF2;
+    color: #fff;
+}
+
+/** General typography **/
+
+ul.dropdown-menu {
+    border: 1px solid #f2f2f2;
+}
+
+ul.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background: #CAEBF2;
+}
+
+.navbar {
+    border-bottom: 0;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand > img {
+    height: 100%;
+    padding: 15px;
+    width: auto;
+    padding: 0 14px;
+}
+
+.page-header {
+    margin: 0 0 20px;
+    padding-top: 16px;
+}
+
+abbr[title], abbr[data-original-title], abbr {
+    border-bottom: none;
+    cursor: pointer;
+}
+
+a abbr {
+    cursor: pointer;
+}
+
+.method-description table, .description table {
+    border: solid 1px #f2f2f2;
+    padding: 1em;
+    margin: 1em;
+}
+
+.method-description td, .method-description th,
+.description td, .description th {
+    padding: 0.75em 1.25em;
+}
+
+.method-description tbody tr:nth-child(even),
+.description tbody tr:nth-child(even) {
+    background: #edf3fe;
+}
+
+.method-description tbody tr:nth-child(odd),
+.description tbody tr:nth-child(odd) {
+    background: #fff;
+}
+
+.method-description thead tr,
+.description thead tr {
+    background: #edf3fe;
+}
+
+/** General Sami styling **/
+
+.underlined > .row {
+    padding: 8px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+#page-content, #footer {
+	padding: 0 10%;
+}
+
+#footer {
+    text-align: right;
+    font-size: 11px;
+}
+
+.description {
+    padding: 10px;
+}
+
+.description p {
+    padding: 0;
+    margin: 8px 0;
+}
+
+.method-description {
+    margin: 0 0 24px 0;
+}
+
+.details {
+    padding-left: 30px;
+}
+
+#method-details .method-item {
+    margin-bottom: 60px;
+}
+
+.method-item h3 {
+	font-size: 20px;
+}
+
+.method-item h3 {
+    padding: 8px 8px 8px 12px;
+    margin-bottom: 20px;
+}
+
+span.glyphicon {
+    font-size: 0.6em;
+}
+
+.location {
+    float: right;
+}
+
+.namespace-list a {
+    padding: 3px 8px;
+    margin: 0 5px 5px 0;
+    border: 1px solid #f2f2f2;
+    background-color: #f9f9f9;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.no-description {
+    color: #A9A9A9;
+    font-size: 90%;
+}
+
+/* Namespaces page */
+
+.namespaces {
+    clear: both;
+}
+
+.namespaces .namespace-container {
+    float: left;
+    margin: 0 14px 14px 0;
+    min-width: 30%;
+}
+
+.namespaces h2 {
+    margin: 0 0 20px 0;
+}
+
+@media (max-width: 991px) {
+    .namespaces .namespace-container {
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+/** Code and pre tags **/
+
+tt, code, pre {
+    font-family: "Overpass Mono", Consolas, Courier, monospace;
+}
+
+code {
+    padding: 2px;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin: 0;
+    font-size: 85%;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    color: #222;
+}
+
+pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+}
+
+/** Doc index **/
+
+#doc-index th {
+    border: none;
+}
+
+#doc-index h2 {
+    font-weight: bold;
+    margin: 30px 0;
+}
+
+#doc-index .pagination > li > a {
+    padding: 6px 8px;
+    font-weight: bold;
+    border: none;
+    color: #ff7f82;
+}
+
+#doc-index .pagination > li > a:hover {
+    padding: 6px 8px;
+    border: none;
+    color: #FF3B3F;
+    background: transparent;
+}
+
+/* Search page */
+
+.search-results {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-results li {
+    list-style-type: none;
+    margin: 0;
+    padding: 14px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.search-results h2 {
+    background: none;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+.search-results h2 a {
+    float: left;
+    display: block;
+    margin: 0 0 4px 0;
+}
+
+.search-results .search-type {
+    float: right;
+    margin: 0 0 4px 0;
+}
+
+.search-results .search-from {
+    margin: 0 0 12px 0;
+    font-size: 12px;
+    color: #999;
+}
+
+.search-results .search-from a {
+    font-style: italic;
+}
+
+.search-results .search-description {
+    margin: 8px 0 0 30px;
+}
+
+.label-default {
+    background-color: #CAEBF2;
 }

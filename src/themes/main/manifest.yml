@@ -3,5 +3,8 @@ name: main
 parent: default
 
 static:
-    'css/main.css': 'css/main.css'
     'css/style.css': 'css/style.css'
+    'img/logo.png': 'img/logo.png'
+    'img/logo-small.png': 'img/logo-small.png'
+
+namespace:

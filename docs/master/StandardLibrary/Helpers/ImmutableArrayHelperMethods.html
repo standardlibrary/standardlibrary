@@ -7,7 +7,6 @@
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="../../css/main.css">
         <link rel="stylesheet" type="text/css" href="../../css/style.css">
         <script src="../../js/jquery-1.11.1.min.js"></script>
         <script src="../../js/bootstrap.min.js"></script>
@@ -23,33 +22,21 @@
     <body id="class" data-name="class:StandardLibrary_Helpers_ImmutableArrayHelperMethods" data-root-path="../../">
             <div id="content">
         <div id="left-column">
-                <div id="control-panel">
-                <script>
-            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
-        </script>
-        <form id="search-form" action="../../search.html" method="GET">
-            <span class="glyphicon glyphicon-search"></span>
-            <input name="search"
-                   class="typeahead form-control"
-                   type="search"
-                   placeholder="Search">
-        </form>
-    </div>
-
+            
                 <div id="api-tree"></div>
 
         </div>
         <div id="right-column">
-                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+                <nav id="site-nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
-            <div class="navbar-header">
+            <div class="navbar-header  navbar-collapse">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../../index.html">Standard Library</a>
+                <a class="navbar-brand" href="../../index.html"><img class="pull-left" src="../../img/logo-small.png" alt="Standard Library" />Standard Library</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-elements">
                 <ul class="nav navbar-nav">
@@ -58,33 +45,39 @@
                                         <li><a href="../../interfaces.html">Interfaces</a></li>
                     <li><a href="../../traits.html">Traits</a></li>
                     <li><a href="../../doc-index.html">Index</a></li>
-                    <li><a href="../../search.html">Search</a></li>
+                    <li class="divider">
+                        <form id="search-form" action="../../search.html" method="GET" class="navbar-form">
+                            <div class="form-group">
+                                <span class="glyphicon glyphicon-search"></span>
+                                    <input name="search"
+                                           class="typeahead form-control"
+                                           type="search"
+                                           placeholder="Search">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="dropdown divider"><a href="#" class="dropdown-toggle" data-toggle="dropdown">master <b class="caret"></b></a>
+                        <ul class="dropdown-menu"><li><a href="../../../master/index.html" data-version="master">master</a>
+                                </li>                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-                        <div class="namespace-breadcrumbs">
-            <ol class="breadcrumb">
-                <li><span class="label label-default">trait</span></li>
-                        <li><a href="../../StandardLibrary.html">StandardLibrary</a></li><li class="backslash">\</li><li><a href="../../StandardLibrary/Helpers.html">Helpers</a></li><li class="backslash">\</li><li>ImmutableArrayHelperMethods</li>
-            </ol>
-        </div>
-                <div id="page-content">
+                        <div id="page-content">
                 
     <div class="page-header">
         <h1>
             ImmutableArrayHelperMethods
                 
         </h1>
-    </div>
-
-    <p>    trait
-    <strong>ImmutableArrayHelperMethods</strong>
+        <p>    trait
+    <code>ImmutableArrayHelperMethods</code>
 </p>
-
-        
+            
     
+    </div>
 
             <div class="description">
             <p>Helper trait to implement immutable arrays</p>            <p>Implements two basic methods to prevent accidental or implicit modification
@@ -92,64 +85,67 @@ of an arrays properties.</p>                    </div>
     
     
     
-    
-            <h2>Methods</h2>
+            <h2>Available Methods</h2>
 
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    void
+                    <a href="#method_offsetSet">offsetSet</a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_offsetSet">offsetSet</a>(string $property, mixed $value)
-        
                                             <p>Prevent implicit setting of properties</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    void
+                    <a href="#method_offsetUnset">offsetUnset</a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_offsetUnset">offsetUnset</a>(string $property)
-        
                                             <p>Prevent implicit unsetting of properties</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
 
 
-        <h2>Details</h2>
+        <h2>Method Details</h2>
 
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_offsetSet">
-        <div class="location">at         line 35</div>
-        <code>final                    void
-    <strong>offsetSet</strong>(string $property, mixed $value)
-        </code>
+        <a href="#method_offsetSet"><span class="glyphicon glyphicon-link"></span></a>
+        <div class="location"><small></small></div>
+        offsetSet()
     </h3>
     <div class="details">
             
     
-
                     <div class="method-description">
                                     <p>Prevent implicit setting of properties</p>                                                </div>
                 <div class="tags">
+
+            <h4>Method Signature</h4>
+            <table class="table table-condensed">
+                <tr>
+                    <td><code>final                    void
+    <strong>offsetSet</strong>(string $property, mixed $value)
+        </code></td>
+                </tr>
+            </table>
+
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string</td>
-                <td>$property</td>
+                <td><code>string</code></td>
+                <td><code>$property</code></td>
                 <td><ul>
 <li>Property name to set</li>
 </ul>
 </td>
             </tr>
                     <tr>
-                <td>mixed</td>
-                <td>$value</td>
+                <td><code>mixed</code></td>
+                <td><code>$value</code></td>
                 <td><ul>
 <li>Mixed value to set property to</li>
 </ul>
@@ -162,7 +158,7 @@ of an arrays properties.</p>                    </div>
 
                     <table class="table table-condensed">
         <tr>
-            <td>void</td>
+            <td><code>void</code></td>
             <td></td>
         </tr>
     </table>
@@ -185,8 +181,7 @@ of an arrays properties.</p>                    </div>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>http://php.net/manual/en/arrayaccess.offsetset.php</td>
-                <td></td>
+                <td><a target="_blank" href="http://php.net/manual/en/arrayaccess.offsetset.php"><span class="glyphicon glyphicon-new-window"></span>&nbsp;http://php.net/manual/en/arrayaccess.offsetset.php</a></td>
             </tr>
             </table>
 
@@ -196,24 +191,32 @@ of an arrays properties.</p>                    </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_offsetUnset">
-        <div class="location">at         line 49</div>
-        <code>final                    void
-    <strong>offsetUnset</strong>(string $property)
-        </code>
+        <a href="#method_offsetUnset"><span class="glyphicon glyphicon-link"></span></a>
+        <div class="location"><small></small></div>
+        offsetUnset()
     </h3>
     <div class="details">
             
     
-
                     <div class="method-description">
                                     <p>Prevent implicit unsetting of properties</p>                                                </div>
                 <div class="tags">
+
+            <h4>Method Signature</h4>
+            <table class="table table-condensed">
+                <tr>
+                    <td><code>final                    void
+    <strong>offsetUnset</strong>(string $property)
+        </code></td>
+                </tr>
+            </table>
+
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string</td>
-                <td>$property</td>
+                <td><code>string</code></td>
+                <td><code>$property</code></td>
                 <td><ul>
 <li>Property name to unset</li>
 </ul>
@@ -226,7 +229,7 @@ of an arrays properties.</p>                    </div>
 
                     <table class="table table-condensed">
         <tr>
-            <td>void</td>
+            <td><code>void</code></td>
             <td></td>
         </tr>
     </table>
@@ -249,8 +252,7 @@ of an arrays properties.</p>                    </div>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>http://php.net/manual/en/arrayaccess.offsetunset.php</td>
-                <td></td>
+                <td><a target="_blank" href="http://php.net/manual/en/arrayaccess.offsetunset.php"><span class="glyphicon glyphicon-new-window"></span>&nbsp;http://php.net/manual/en/arrayaccess.offsetunset.php</a></td>
             </tr>
             </table>
 

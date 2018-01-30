@@ -7,7 +7,6 @@
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="../../css/main.css">
         <link rel="stylesheet" type="text/css" href="../../css/style.css">
         <script src="../../js/jquery-1.11.1.min.js"></script>
         <script src="../../js/bootstrap.min.js"></script>
@@ -23,33 +22,21 @@
     <body id="class" data-name="class:StandardLibrary_Enums_Boolean" data-root-path="../../">
             <div id="content">
         <div id="left-column">
-                <div id="control-panel">
-                <script>
-            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
-        </script>
-        <form id="search-form" action="../../search.html" method="GET">
-            <span class="glyphicon glyphicon-search"></span>
-            <input name="search"
-                   class="typeahead form-control"
-                   type="search"
-                   placeholder="Search">
-        </form>
-    </div>
-
+            
                 <div id="api-tree"></div>
 
         </div>
         <div id="right-column">
-                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+                <nav id="site-nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
-            <div class="navbar-header">
+            <div class="navbar-header  navbar-collapse">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../../index.html">Standard Library</a>
+                <a class="navbar-brand" href="../../index.html"><img class="pull-left" src="../../img/logo-small.png" alt="Standard Library" />Standard Library</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-elements">
                 <ul class="nav navbar-nav">
@@ -58,33 +45,39 @@
                                         <li><a href="../../interfaces.html">Interfaces</a></li>
                     <li><a href="../../traits.html">Traits</a></li>
                     <li><a href="../../doc-index.html">Index</a></li>
-                    <li><a href="../../search.html">Search</a></li>
+                    <li class="divider">
+                        <form id="search-form" action="../../search.html" method="GET" class="navbar-form">
+                            <div class="form-group">
+                                <span class="glyphicon glyphicon-search"></span>
+                                    <input name="search"
+                                           class="typeahead form-control"
+                                           type="search"
+                                           placeholder="Search">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="dropdown divider"><a href="#" class="dropdown-toggle" data-toggle="dropdown">master <b class="caret"></b></a>
+                        <ul class="dropdown-menu"><li><a href="../../../master/index.html" data-version="master">master</a>
+                                </li>                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-                        <div class="namespace-breadcrumbs">
-            <ol class="breadcrumb">
-                <li><span class="label label-default">class</span></li>
-                        <li><a href="../../StandardLibrary.html">StandardLibrary</a></li><li class="backslash">\</li><li><a href="../../StandardLibrary/Enums.html">Enums</a></li><li class="backslash">\</li><li>Boolean</li>
-            </ol>
-        </div>
-                <div id="page-content">
+                        <div id="page-content">
                 
     <div class="page-header">
         <h1>
             Boolean
                 
         </h1>
-    </div>
-
-    <p>    class
-    <strong>Boolean</strong>        extends <a href="../../StandardLibrary/Enum.html"><abbr title="StandardLibrary\Enum">Enum</abbr></a>
+        <p>    class
+    <code>Boolean</code>        extends <code><a href="../../StandardLibrary/Enum.html"><abbr title="StandardLibrary\Enum">Enum</abbr></a></code>
 </p>
-
-        
+            
     
+    </div>
 
             <div class="description">
             <p>Example of an enum enforcing boolean values</p>                                </div>
@@ -124,117 +117,99 @@
             </table>
 
     
-            <h2>Properties</h2>
-
-            <table class="table table-condensed">
-                    <tr>
-                <td class="type" id="property_value">
-                                        protected                                        mixed
-                </td>
-                <td>$value</td>
-                <td class="last"></td>
-                <td><small>from&nbsp;<a href="../../StandardLibrary/Enum.html#property_value"><abbr title="StandardLibrary\Enum">Enum</abbr></a></small></td>
-            </tr>
-            </table>
-
-    
-            <h2>Methods</h2>
+            <h2>Available Methods</h2>
 
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    void
+                    <a href="#method___set">__set</a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___set">__set</a>(string $property, mixed $value)
-        
                                             <p>Prevent implicit setting of properties</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../StandardLibrary/Helpers/ImmutableObjectHelperMethods.html#method___set"><abbr title="StandardLibrary\Helpers\ImmutableObjectHelperMethods">ImmutableObjectHelperMethods</abbr></a></small></div>
+                <div class="col-md-2"><small>from&nbsp;<code><a href="../../StandardLibrary/Helpers/ImmutableObjectHelperMethods.html#method___set"><abbr title="StandardLibrary\Helpers\ImmutableObjectHelperMethods">ImmutableObjectHelperMethods</abbr></a></code></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    void
+                    <a href="#method___unset">__unset</a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___unset">__unset</a>(string $property)
-        
                                             <p>Prevent implicit unsetting of properties</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../StandardLibrary/Helpers/ImmutableObjectHelperMethods.html#method___unset"><abbr title="StandardLibrary\Helpers\ImmutableObjectHelperMethods">ImmutableObjectHelperMethods</abbr></a></small></div>
+                <div class="col-md-2"><small>from&nbsp;<code><a href="../../StandardLibrary/Helpers/ImmutableObjectHelperMethods.html#method___unset"><abbr title="StandardLibrary\Helpers\ImmutableObjectHelperMethods">ImmutableObjectHelperMethods</abbr></a></code></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    void
+                    <a href="#method___construct">__construct</a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>(string $type)
-        
                                             <p>Construct a new ENUM object</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../StandardLibrary/Enum.html#method___construct"><abbr title="StandardLibrary\Enum">Enum</abbr></a></small></div>
+                <div class="col-md-2"><small>from&nbsp;<code><a href="../../StandardLibrary/Enum.html#method___construct"><abbr title="StandardLibrary\Enum">Enum</abbr></a></code></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;<a href="../../StandardLibrary/Enum.html"><abbr title="StandardLibrary\Enum">Enum</abbr></a>
+                    <a href="#method___callStatic">__callStatic</a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___callStatic">__callStatic</a>(string $method, array $args = [])
-        
                                             <p>Call a static method to construct a new enum</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../StandardLibrary/Enum.html#method___callStatic"><abbr title="StandardLibrary\Enum">Enum</abbr></a></small></div>
+                <div class="col-md-2"><small>from&nbsp;<code><a href="../../StandardLibrary/Enum.html#method___callStatic"><abbr title="StandardLibrary\Enum">Enum</abbr></a></code></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    mixed
+                    <a href="#method_getValue">getValue</a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getValue">getValue</a>()
-        
                                             <p>Returns the value of the ENUM</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;<a href="../../StandardLibrary/Enum.html#method_getValue"><abbr title="StandardLibrary\Enum">Enum</abbr></a></small></div>
+                <div class="col-md-2"><small>from&nbsp;<code><a href="../../StandardLibrary/Enum.html#method_getValue"><abbr title="StandardLibrary\Enum">Enum</abbr></a></code></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;string
+                    <a href="#method_getType">getType</a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getType">getType</a>()
-        
                                             <p>Returns the type of this enum</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
 
 
-        <h2>Details</h2>
+        <h2>Method Details</h2>
 
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___set">
-        <div class="location">in <a href="../../StandardLibrary/Helpers/ImmutableObjectHelperMethods.html#method___set"><abbr title="StandardLibrary\Helpers\ImmutableObjectHelperMethods">ImmutableObjectHelperMethods</abbr></a> at         line 33</div>
-        <code>final                    void
-    <strong>__set</strong>(string $property, mixed $value)
-        </code>
+        <a href="#method___set"><span class="glyphicon glyphicon-link"></span></a>
+        <div class="location"><small>in <code><a href="../../StandardLibrary/Helpers/ImmutableObjectHelperMethods.html#method___set"><abbr title="StandardLibrary\Helpers\ImmutableObjectHelperMethods">ImmutableObjectHelperMethods</abbr></a></code></small></div>
+        __set()
     </h3>
     <div class="details">
             
     
-
                     <div class="method-description">
                                     <p>Prevent implicit setting of properties</p>                                                </div>
                 <div class="tags">
+
+            <h4>Method Signature</h4>
+            <table class="table table-condensed">
+                <tr>
+                    <td><code>final                    void
+    <strong>__set</strong>(string $property, mixed $value)
+        </code></td>
+                </tr>
+            </table>
+
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string</td>
-                <td>$property</td>
+                <td><code>string</code></td>
+                <td><code>$property</code></td>
                 <td><ul>
 <li>Property name to set</li>
 </ul>
 </td>
             </tr>
                     <tr>
-                <td>mixed</td>
-                <td>$value</td>
+                <td><code>mixed</code></td>
+                <td><code>$value</code></td>
                 <td><ul>
 <li>Mixed value to set property to</li>
 </ul>
@@ -247,7 +222,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>void</td>
+            <td><code>void</code></td>
             <td></td>
         </tr>
     </table>
@@ -272,24 +247,32 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___unset">
-        <div class="location">in <a href="../../StandardLibrary/Helpers/ImmutableObjectHelperMethods.html#method___unset"><abbr title="StandardLibrary\Helpers\ImmutableObjectHelperMethods">ImmutableObjectHelperMethods</abbr></a> at         line 45</div>
-        <code>final                    void
-    <strong>__unset</strong>(string $property)
-        </code>
+        <a href="#method___unset"><span class="glyphicon glyphicon-link"></span></a>
+        <div class="location"><small>in <code><a href="../../StandardLibrary/Helpers/ImmutableObjectHelperMethods.html#method___unset"><abbr title="StandardLibrary\Helpers\ImmutableObjectHelperMethods">ImmutableObjectHelperMethods</abbr></a></code></small></div>
+        __unset()
     </h3>
     <div class="details">
             
     
-
                     <div class="method-description">
                                     <p>Prevent implicit unsetting of properties</p>                                                </div>
                 <div class="tags">
+
+            <h4>Method Signature</h4>
+            <table class="table table-condensed">
+                <tr>
+                    <td><code>final                    void
+    <strong>__unset</strong>(string $property)
+        </code></td>
+                </tr>
+            </table>
+
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string</td>
-                <td>$property</td>
+                <td><code>string</code></td>
+                <td><code>$property</code></td>
                 <td><ul>
 <li>Property name to set</li>
 </ul>
@@ -302,7 +285,7 @@
 
                     <table class="table table-condensed">
         <tr>
-            <td>void</td>
+            <td><code>void</code></td>
             <td></td>
         </tr>
     </table>
@@ -327,25 +310,33 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">in <a href="../../StandardLibrary/Enum.html#method___construct"><abbr title="StandardLibrary\Enum">Enum</abbr></a> at         line 47</div>
-        <code>final                    void
-    <strong>__construct</strong>(string $type)
-        </code>
+        <a href="#method___construct"><span class="glyphicon glyphicon-link"></span></a>
+        <div class="location"><small>in <code><a href="../../StandardLibrary/Enum.html#method___construct"><abbr title="StandardLibrary\Enum">Enum</abbr></a></code></small></div>
+        __construct()
     </h3>
     <div class="details">
             
     
-
                     <div class="method-description">
                                     <p>Construct a new ENUM object</p>                    <p>Takes one paramater which is the type of the ENUM object. If that type
 does not exist in the ENUM object then an exception is thrown.</p>                            </div>
                 <div class="tags">
+
+            <h4>Method Signature</h4>
+            <table class="table table-condensed">
+                <tr>
+                    <td><code>final                    void
+    <strong>__construct</strong>(string $type)
+        </code></td>
+                </tr>
+            </table>
+
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string</td>
-                <td>$type</td>
+                <td><code>string</code></td>
+                <td><code>$type</code></td>
                 <td></td>
             </tr>
             </table>
@@ -355,7 +346,7 @@ does not exist in the ENUM object then an exception is thrown.</p>              
 
                     <table class="table table-condensed">
         <tr>
-            <td>void</td>
+            <td><code>void</code></td>
             <td></td>
         </tr>
     </table>
@@ -380,30 +371,38 @@ does not exist in the ENUM object then an exception is thrown.</p>              
             </div>
                     <div class="method-item">
                     <h3 id="method___callStatic">
-        <div class="location">in <a href="../../StandardLibrary/Enum.html#method___callStatic"><abbr title="StandardLibrary\Enum">Enum</abbr></a> at         line 67</div>
-        <code>final        static            <a href="../../StandardLibrary/Enum.html"><abbr title="StandardLibrary\Enum">Enum</abbr></a>
-    <strong>__callStatic</strong>(string $method, array $args = [])
-        </code>
+        <a href="#method___callStatic"><span class="glyphicon glyphicon-link"></span></a>
+        <div class="location"><small>in <code><a href="../../StandardLibrary/Enum.html#method___callStatic"><abbr title="StandardLibrary\Enum">Enum</abbr></a></code></small></div>
+        __callStatic()
     </h3>
     <div class="details">
             
     
-
                     <div class="method-description">
                                     <p>Call a static method to construct a new enum</p>                    <p>Attempts to convert the called method name to uppercase but if that fails
 then it resorts to using whatever case the method name was passed in.</p>                            </div>
                 <div class="tags">
+
+            <h4>Method Signature</h4>
+            <table class="table table-condensed">
+                <tr>
+                    <td><code>final        static            <a href="../../StandardLibrary/Enum.html"><abbr title="StandardLibrary\Enum">Enum</abbr></a>
+    <strong>__callStatic</strong>(string $method, array $args = [])
+        </code></td>
+                </tr>
+            </table>
+
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td>string</td>
-                <td>$method</td>
+                <td><code>string</code></td>
+                <td><code>$method</code></td>
                 <td></td>
             </tr>
                     <tr>
-                <td>array</td>
-                <td>$args</td>
+                <td><code>array</code></td>
+                <td><code>$args</code></td>
                 <td></td>
             </tr>
             </table>
@@ -413,7 +412,7 @@ then it resorts to using whatever case the method name was passed in.</p>       
 
                     <table class="table table-condensed">
         <tr>
-            <td><a href="../../StandardLibrary/Enum.html"><abbr title="StandardLibrary\Enum">Enum</abbr></a></td>
+            <td><code><a href="../../StandardLibrary/Enum.html"><abbr title="StandardLibrary\Enum">Enum</abbr></a></code></td>
             <td></td>
         </tr>
     </table>
@@ -438,24 +437,32 @@ then it resorts to using whatever case the method name was passed in.</p>       
             </div>
                     <div class="method-item">
                     <h3 id="method_getValue">
-        <div class="location">in <a href="../../StandardLibrary/Enum.html#method_getValue"><abbr title="StandardLibrary\Enum">Enum</abbr></a> at         line 82</div>
-        <code>final                    mixed
-    <strong>getValue</strong>()
-        </code>
+        <a href="#method_getValue"><span class="glyphicon glyphicon-link"></span></a>
+        <div class="location"><small>in <code><a href="../../StandardLibrary/Enum.html#method_getValue"><abbr title="StandardLibrary\Enum">Enum</abbr></a></code></small></div>
+        getValue()
     </h3>
     <div class="details">
             
     
-
                     <div class="method-description">
                                     <p>Returns the value of the ENUM</p>                                                </div>
                 <div class="tags">
+
+            <h4>Method Signature</h4>
+            <table class="table table-condensed">
+                <tr>
+                    <td><code>final                    mixed
+    <strong>getValue</strong>()
+        </code></td>
+                </tr>
+            </table>
+
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td>mixed</td>
+            <td><code>mixed</code></td>
             <td><ul>
 <li>returns the set value of the object</li>
 </ul>
@@ -471,24 +478,32 @@ then it resorts to using whatever case the method name was passed in.</p>       
             </div>
                     <div class="method-item">
                     <h3 id="method_getType">
-        <div class="location">at         line 31</div>
-        <code>final        static            string
-    <strong>getType</strong>()
-        </code>
+        <a href="#method_getType"><span class="glyphicon glyphicon-link"></span></a>
+        <div class="location"><small></small></div>
+        getType()
     </h3>
     <div class="details">
             
     
-
                     <div class="method-description">
                                     <p>Returns the type of this enum</p>                                                </div>
                 <div class="tags">
+
+            <h4>Method Signature</h4>
+            <table class="table table-condensed">
+                <tr>
+                    <td><code>final        static            string
+    <strong>getType</strong>()
+        </code></td>
+                </tr>
+            </table>
+
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td>string</td>
+            <td><code>string</code></td>
             <td><ul>
 <li>Returns the name of the object type</li>
 </ul>
